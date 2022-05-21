@@ -14,6 +14,7 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net','https://*.herokuapp.com','https://*.127.0.0.1']
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-xioiha6@&flw4doch$_*6og+ot_hx&xk^u0ym5^^ez7l6767@&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['healthapp12.azurewebsites.net','169.254.129.4']
+ALLOWED_HOSTS = ['healthapp12.azurewebsites.net']
 
 
 # Application definition
