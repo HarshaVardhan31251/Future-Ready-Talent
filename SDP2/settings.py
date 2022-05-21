@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-xioiha6@&flw4doch$_*6og+ot_hx&xk^u0ym5^^ez7l6767@&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['healthapp12.azurewebsites.net']
 
 
 # Application definition
@@ -77,15 +77,12 @@ WSGI_APPLICATION = 'SDP2.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'health',
-        'USER': 'root',
+        'USER': 'postgres',
         'PASSWORD': 'Harsha$17082001',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-        }
+        'HOST': 'healthapp.postgres.database.azure.com',
+        'PORT': '5432'
     }
 }
 
@@ -150,9 +147,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATIC_URL = '/static/'
-MEDIA_URL = '/Images/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = (
+   ('healthapp', os.path.join(BASE_DIR, 'healthapp', 'static')),
+)
+STATICFILES_FINDERS = (
+  'django.contrib.staticfiles.finders.FileSystemFinder',
+  'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+)
+MEDIA_URL = BASE_DIR+'/Images/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
