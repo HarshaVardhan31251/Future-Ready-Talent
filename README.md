@@ -5,7 +5,7 @@
  
  Project Title : Health Care and WellBeing System
  
- Problemn Statement : This webapp can be useful for Patients contacting the doctors in online mode.
+ Problem Statement : This webapp can be useful for Patients contacting the doctors in online mode.
  
  Primary Azure Technology : 1)Azure App Service 2)Azure Database for PostgreSQL
  
